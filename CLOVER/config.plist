@@ -15,11 +15,9 @@
 				<key>AddDTGP</key>
 				<true/>
 				<key>AddHDMI</key>
-				<false/>
+				<true/>
 				<key>AddPNLF</key>
 				<true/>
-				<key>FixAirport</key>
-				<false/>
 				<key>FixSBUS</key>
 				<true/>
 			</dict>
@@ -193,6 +191,104 @@
 					RUNfXw==
 					</data>
 				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change Method(GPRW,2,N) to XPRW, pair with SSDT-PRW.aml</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					R1BSVwI=
+					</data>
+					<key>Replace</key>
+					<data>
+					WFBSVwI=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change Method(UPBS,0,N) to XPBS</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					VVBCUwA=
+					</data>
+					<key>Replace</key>
+					<data>
+					WFBCUwA=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change Method(UPBI,0,N) to XPBI</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					VVBCSQA=
+					</data>
+					<key>Replace</key>
+					<data>
+					WFBCSQA=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change Method(SMWR,4,N) to XMWR</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					U01XUgQ=
+					</data>
+					<key>Replace</key>
+					<data>
+					WE1XUgQ=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change Method(CLRI,0,S) to XLRI</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					Q0xSSQg=
+					</data>
+					<key>Replace</key>
+					<data>
+					WExSSQg=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change Method(INIT,0,S) to XNIT</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					SU5JVAg=
+					</data>
+					<key>Replace</key>
+					<data>
+					WE5JVAg=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change Method(SMRD,4,N) to XMRD</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					U01SRAQ=
+					</data>
+					<key>Replace</key>
+					<data>
+					WE1SRAQ=
+					</data>
+				</dict>
 			</array>
 		</dict>
 		<key>DropTables</key>
@@ -222,8 +318,6 @@
 		<dict>
 			<key>DropOem</key>
 			<false/>
-			<key>EnableC7</key>
-			<false/>
 			<key>Generate</key>
 			<dict>
 				<key>CStates</key>
@@ -249,7 +343,6 @@
 			<string>SSDT-IMEI.aml</string>
 			<string>SSDT-PCIList.aml</string>
 			<string>SSDT-PRW.aml</string>
-			<string>SSDT-PTSWAK.aml</string>
 			<string>SSDT-UIAC.aml</string>
 			<string>SSDT-USBX.aml</string>
 			<string>SSDT-PS2D.aml</string>
@@ -506,7 +599,7 @@
 	<key>KernelAndKextPatches</key>
 	<dict>
 		<key>AppleIntelCPUPM</key>
-		<true/>
+		<false/>
 		<key>AppleRTC</key>
 		<true/>
 		<key>Debug</key>
@@ -557,6 +650,78 @@
 				<key>Replace</key>
 				<data>
 				SW50ZXJuYWw=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>IONVMeFamily IONameMatch</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				PHN0cmluZz5wY2kxNDRkLGE4MDQ8L3N0cmluZz4=
+				</data>
+				<key>InfoPlistPatch</key>
+				<true/>
+				<key>Name</key>
+				<string>IONVMeFamily</string>
+				<key>Replace</key>
+				<data>
+				PHN0cmluZz5wY2kxNDRkLGE4MDI8L3N0cmluZz4=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>HDMI</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AAQAAIcBAAACBAoAAAQAAA==
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>AppleIntelSKLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AAgAAIcBAAACBAoAAAgAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>eDP  port 0000 for Skylake credit syscl</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AAAIAAIAAACYAAAAAQUJAAAEAAA=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AAAIAAAEAACYAAAAAQUJAAAEAAA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>0x19160000/etc, 19MB framebuffer 9MB cursor bytes (credit RehabMan)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AAAgAgAAUAE=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AAAwAQAAkAA=
 				</data>
 			</dict>
 		</array>
