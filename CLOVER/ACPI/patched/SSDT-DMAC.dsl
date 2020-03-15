@@ -45,7 +45,7 @@ DefinitionBlock ("", "SSDT", 2, "hack", "DMAC", 0)
                 }
                 Else
                 {
-                    Return (Zero)
+                    Return (0x00)
                 }
             }
         }
