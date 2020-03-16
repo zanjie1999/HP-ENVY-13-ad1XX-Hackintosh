@@ -23,8 +23,8 @@ jobs:
 
     - name: Set git identity
       run : |
-        git config --global user.email "KFER.Mercer@gmail.com"
-        git config --global user.name "KFERMercer"
+        git config --global user.email "zanjie1999@yeah.net"
+        git config --global user.name "zanjie1999"
     - name: Load upstream commits
       run: git pull https://github.com/SilentSliver/HP-ENVY-13-ad1XX-Hackintosh.git --no-edit --strategy-option ours
 
